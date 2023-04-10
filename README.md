@@ -22,6 +22,7 @@ I decided to find the datasets about the Quality of Life in the City. There are 
 For my dataset, there are 265 cities in the data sample, and 9 attributes (9 quantitative) with Housing, Cost of Living, Commute, Safety, Business Freedom, Education, Environmental Quality, Economy, and Taxation. With the 9 attributes, cities are scored with ‘Housing’ by the price of a large, medium, and small apartment, and the rent index. For the ‘Cost of Living’, the score is dependent on inflation score and daily prices such as lunch, monthly public transport, 5 km taxi ride, coffee, beer, bread, and meal at a restaurant. Furthermore, traffic handling score is used for ‘Commute’ and ‘Safety’ is measured with crime rate, Gun-related deaths per 100,000 residents per year, Guns per 100 residents. Business freedom, freedom from corruption, lack of labor restrictions, and time to open a business are used to decide the ‘Business Freedom’. In addition, university quality, percent of students’ happiness, and PISA ranking are used in ‘Education’ score. For ‘Environmental Quality, the percent of air quality, cleanliness, water quality, and urban greenery score determine the score. For ‘Economy’, the currency exchange rate per US dollar for an urban area, GDP growth rate (score), and GDP per capita (score) were used. Finally, ‘Taxation’ is scored by effective company profit tax rate on payouts as dividends, income tax level, Profit tax (% of the profit), time overhead to file company tax, and VAT (Sales Tax). Moreover, with the quantitative attributes data, cities are scored from 0 to 10. If the attributes’ scores are close to 10, then it is a good city for that attributes. For example, in Newyork, Housing: 1/ Cost of Living: 2.342 / Commute: 5.51925 / Safety: 7.022/ Healthcare: 6.1053 / Education: 8.0935/ Environment: 5.23375/ Economy: 6.5145 Taxation: 3.9205. From these scores, the costs of living and housing in New York have a low score which means average living expenses are significantly higher compared to other cities, and moving to New York will likely increase the living costs. In fact, New York is the 7th most expensive among the cities, especially in the housing market. When I visualize the city’s score, each data will allow me to make efficient choices by reviewing my preferred criteria first.
 
 ## Correlation, Parallel file explaination
+
 ● Correlation matrix
 The correlation matrix shows the difference in color according to the correlation between
 the two attributes. The closer the correlation coefficient is to 1, the redder it is, the closer
@@ -34,6 +35,7 @@ unless accurate figures are needed. Therefore, this makes it easy for people who
 used to analyzing large amounts of data to recognize the relationship and correlation
 between the two variables through color differences. However, because of the use of
 color, it is impossible to get information on the exact correlation value.
+
 ● Scatterplot matrix plot selection
 This is a plot represented by determining the five variables with the highest sum of
 absolute values of the correlations. This is most appropriate to indicate a correlation. If
@@ -45,6 +47,7 @@ found that the correlation between the variables I chose represents the form of 
 y=-x graph. This graph shows the graph according to the degree of correlation and the
 exact number of correlations. However, I think a visual search is necessary because the
 visualization part is lower than the correlation matrix seen before.
+
 ● Parallel coordinates
 This is a graph made by connecting values with lines according to the value of attributes
 of each data sample. Parallel coordinates can reduce the dimension of data by
@@ -68,6 +71,7 @@ as much as possible, and projecting the data on that axis. However, when dimensi
 reduction occurs, it is only a difference in degree compared to the original data, and
 inevitably, information loss occurs. In addition, it is difficult to interpret dimensionally
 reduced data compared to the original data.
+
 ● Biplot
 A biplot is a graph showing the correlation between the principal components (PC1 and
 PC2) found in PCA analysis and the variables in the original data. The method of
@@ -82,6 +86,7 @@ the advantage of reducing multidimensional data to two dimensions and knowing th
 variance and correlation of the original variable. However, there can be some projection
 ambiguity, and if there are more than 2 significant PCA vectors, some data and variability
 will be lost and not be used for visualization.
+
 ● MDS (use Euclidian distance)
 This is a statistical data analysis technique that visually expresses the relationship
 structure between the values of the data based on the Euclidean distance. Based on the
@@ -92,6 +97,7 @@ the similarity. In my visualization, I expected clustering to appear clearly whe
 technique, but I found that my data did not. The biggest advantage of the method of
 visualizing data using MDS is that it is possible to check the similarity of the data.
 However, the MDS technique can be used when it consists only of numerical variables.
+
 ● MDS(use 1-|correlation| distance)
 This is a statistical data analysis technique that visually expresses the relationship
 structure between attributes based on the correlation distance(1-|correlation|). According
