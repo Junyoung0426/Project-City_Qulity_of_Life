@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 4 </title>
+ 
+  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<h1>Quality of Life in City -</h1>
+<h2> Choose the variable</h2>
+<select name="" id="select1">
+  <option disabled selected>---Choose variable---</option>
+  <option value="">Housing</option>
+  <option value="">Cost of Living</option>
+  <option value="">Commute</option>
+  <option value="">Business Freedom</option>
+  <option value="">Safety</option>
+  <option value="">Education</option>
+  <option value="">Environmental Quality</option>
+  <option value="">Economy</option>
+
+</select>
+
+<p id="p1"> </p>
+<div >
+  <div id="mybarchart" style=" float:left; width: 50%;">
+    <h3>Histogram Chart :</h3>
+  </div>
+  <div id="mybiplot" style=" float:left; width: 50%;">
+    <h3>Biplot :</h3>
+
+  </div>
+  <div id="MDSplot" style=" float:left; width: 50%;">
+    <h3>MDS_Euclidean :</h3>
+
+  </div>
+  <div id="Parallel_coordinates" style=" float:left; width: 50%;">
+    <h3>Parallel Coordinates Plot:</h3>
+  </div>
+</div>
+
+<h1>K-means Clustering</h1>
+
+
+<div>
+  <div id="kmeans_bar" style=" float:left; width: 50%;">
+    <h3>Bar Chart with K clustering:</h3>
+  </div>
+
+  <div id="kmeans_elbow" style=" float:left; width: 50%;">
+    <h3>Elbow method -> k = 6 </h3>
+  </div>
+  <div id="kmeans_mybiplot" style=" float:left; width: 50%;">
+    <h3>Biplot :</h3>
+  </div>
+  <div id="kmeans_MDSplot" style=" float:left; width: 50%;">
+    <h3>MDS_Euclidean :</h3>
+  </div>
+  <div id="kmeans_Parallel_coordinates" style=" float:left; width: 50%;">
+    <h3>Parallel Coordinates Plot:</h3>
+  </div>
+</div>
+
+<script src="lab4_bar_otherPlot.js"></script>
+<script src="Lab4_kmenas.js"></script>
+
+
+
+</html>

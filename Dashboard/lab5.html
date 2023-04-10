@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 5 </title>
+    <style>
+        .selected {
+            stroke: black;
+            opacity: 1 !important;         
+            
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            grid-auto-rows: minmax(10px, 390px);
+        }
+
+        .one {
+            grid-column: 1/2;
+            grid-row: 1;
+        }
+
+        .two {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .three {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .four {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .five {
+            grid-column: 3;
+            grid-row: 2;
+        }
+    </style>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<body>
+    <select name="" id="select1">
+        <option disabled selected>---Choose variable---</option>
+        <option value="">Housing</option>
+        <option value="">Cost of Living</option>
+        <option value="">Commute</option>
+        <option value="">Business Freedom</option>
+        <option value="">Safety</option>
+        <option value="">Education</option>
+        <option value="">Environmental Quality</option>
+        <option value="">Economy</option>
+
+    </select>
+
+    <div class="wrapper">
+        <div class="one" id="mybarchart"><h3>Histogram</h3></div>
+        <div class="two" id="mybiplot2"><h3>Biplot( X axis: PC1 / Y axis: PC2)</h3></div>
+        <div class="three" id="MDSplot"><h3>MDSplot</h3></div>
+        <div class="four" id="Parallel_coordinates"><h3>Parallel_coordinates</h10></div>
+        <div class="five" id="chord"><h3>Chord Diagram</h3></div>
+
+    </div>
+
+    <script src="lab5_bar.js"></script>
+
+
+
+</body>
+
+</html>

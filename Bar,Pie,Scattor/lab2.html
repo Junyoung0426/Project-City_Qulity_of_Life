@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 2 </title>
+  <link rel="stylesheet" href="toggle.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+  <h1>Quality of Life in City - Histogram, Pie, Scattor Chart</h1>
+  <h2> Choose the variable</h2>
+  <select name="" id="select1"> 
+    <option disabled selected>---Choose variable---</option>
+    <option value="">Housing</option>
+    <option value="">Cost of Living</option>
+    <option value="">Commute</option>
+    <option value="">Business Freedom</option>
+    <option value="">Safety </option>
+    <option value="">Education</option>
+    <option value="">Environmental Quality</option>
+    <option value="">Economy</option>
+    <option value="">Taxation</option>
+  </select>
+  
+  <p id="p1"> </p>
+  <p id="p3"> </p>
+
+  <div id="mybarchart" style=" float: left; width: 50%;">
+    <title>Histogram </title>
+    <h3>Histogram Chart :</h3>
+  </div>
+
+  <div id="mypiechart">
+    <h3>PieChart :</h3>
+  </div>
+
+  <div id="myscattorplot" style=" float: left; width: 55%;">
+    <h3>Scattor Plot :</h3>
+    <p id="p2"> </p>
+  </div>
+
+  
+
+  <div id="Xaxes" style=" float: left; width: 20%;">
+    <h3>Select only 1 Variable each for X and for Y</h3>
+    <h4>X axes </h4>
+    <label class="switch">
+      <input type="checkbox" name="x1" value="1" id="Housing" onclick='getCheckboxValue()' />Housing
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="2" id="Cost of Living" onclick='getCheckboxValue()' />Cost of Living
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="3" id="Commute" onclick='getCheckboxValue()' />Commute
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="4" id="Business Freedom" onclick='getCheckboxValue()' />Business Freedom
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="5" id="Safety" onclick='getCheckboxValue()' />Safety
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="6" id="Education" onclick='getCheckboxValue()' />Education
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="7" id="Environmental Quality" onclick='getCheckboxValue()' />Environmental
+      Quality
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="8" id="Economy" onclick='getCheckboxValue()' />Economy
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="x1" value="9" id="Taxation" onclick='getCheckboxValue()' />Taxation
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div id="yaxes">
+    <h4>Y axes </h4>
+    <label class="switch">
+      <input type="checkbox" name="y" value="1" id="Housing" onclick='getCheckboxValue()' />Housing
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="2" id="Cost of Living" onclick='getCheckboxValue()' />Cost of Living
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="3" id="Commute" onclick='getCheckboxValue()' />Commute
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="4" id="Business Freedom" onclick='getCheckboxValue()' />Business Freedom
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="5" id="Safety" onclick='getCheckboxValue()' />Safety
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="6" id="Education" onclick='getCheckboxValue()' />Education
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value= "7" id="Environmental Quality" onclick='getCheckboxValue()' />Environmental
+      Quality
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="8" id="Economy" onclick='getCheckboxValue()' />Economy
+      <span class="slider round"></span>
+    </label>
+    <br>
+    <br>
+
+    <label class="switch">
+      <input type="checkbox" name="y" value="9" id="Taxation" onclick='getCheckboxValue()' />Taxation
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <script src="lab2_Bar.js"></script>
+  <script src="lab2_Pie.js"></script>
+  <script src="lab2_Scattor.js"></script>
+
+</body>
+
+</html>
