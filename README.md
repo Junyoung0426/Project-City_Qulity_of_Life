@@ -23,7 +23,7 @@ For my dataset, there are 265 cities in the data sample, and 9 attributes (9 qua
 
 ## Correlation, Parallel file explaination
 
-● Correlation matrix
+### Correlation matrix
 The correlation matrix shows the difference in color according to the correlation between
 the two attributes. The closer the correlation coefficient is to 1, the redder it is, the closer
 it is to 0, the white it is, and the closer it is to -1, the bluer it is. The closer to blue and red
@@ -36,7 +36,7 @@ used to analyzing large amounts of data to recognize the relationship and correl
 between the two variables through color differences. However, because of the use of
 color, it is impossible to get information on the exact correlation value.
 
-● Scatterplot matrix plot selection
+### Scatterplot matrix plot selection
 This is a plot represented by determining the five variables with the highest sum of
 absolute values of the correlations. This is most appropriate to indicate a correlation. If
 the shape of the plot is similar to the linear graph of y = x, the correlation becomes closer
@@ -48,7 +48,7 @@ y=-x graph. This graph shows the graph according to the degree of correlation an
 exact number of correlations. However, I think a visual search is necessary because the
 visualization part is lower than the correlation matrix seen before.
 
-● Parallel coordinates
+### Parallel coordinates
 This is a graph made by connecting values with lines according to the value of attributes
 of each data sample. Parallel coordinates can reduce the dimension of data by
 representing high-dimensional data as a two-dimensional visualization. I can see that the
@@ -57,7 +57,7 @@ Parallel Coordinate when the correlation is 1, 0, and -1. As the data is express
 form of lines, it is possible to easily perceive the trend shown by the data input of
 visualization. But as you can see from my plot, if the number of samples increases too
 much, it becomes difficult to identify the data of the sample I want to get.
-● PCA plot (top 2 eigenvectors) with associated scree plot (8 bars)
+### PCA plot (top 2 eigenvectors) with associated scree plot (8 bars)
 PCA plot is expressed as a scatter plot by converting high-dimensional data into
 low-dimensional data using PCA. The goal is to find a coordinate system that can
 represent variance on some axes. When you create a PCA plot, you must also create a
@@ -72,7 +72,7 @@ reduction occurs, it is only a difference in degree compared to the original dat
 inevitably, information loss occurs. In addition, it is difficult to interpret dimensionally
 reduced data compared to the original data.
 
-● Biplot
+### Biplot
 A biplot is a graph showing the correlation between the principal components (PC1 and
 PC2) found in PCA analysis and the variables in the original data. The method of
 interpreting Biplot is as follows. The variable that is parallel to the PC axis is the variable
@@ -87,7 +87,7 @@ variance and correlation of the original variable. However, there can be some pr
 ambiguity, and if there are more than 2 significant PCA vectors, some data and variability
 will be lost and not be used for visualization.
 
-● MDS (use Euclidian distance)
+### MDS (use Euclidian distance)
 This is a statistical data analysis technique that visually expresses the relationship
 structure between the values of the data based on the Euclidean distance. Based on the
 dissimilarity distance of the data, it is a technique to lower multidimensional data to two
@@ -98,7 +98,7 @@ technique, but I found that my data did not. The biggest advantage of the method
 visualizing data using MDS is that it is possible to check the similarity of the data.
 However, the MDS technique can be used when it consists only of numerical variables.
 
-● MDS(use 1-|correlation| distance)
+### MDS(use 1-|correlation| distance)
 This is a statistical data analysis technique that visually expresses the relationship
 structure between attributes based on the correlation distance(1-|correlation|). According
 to the similarity of the correlation between each attribute, the indolence is plotted, and the
