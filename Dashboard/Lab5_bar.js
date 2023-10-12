@@ -1,6 +1,6 @@
-var margin = { top: 20, right: 30, bottom: 30, left: 30 },
+var margin = { top: 50, right: 10, bottom: 10, left: 40 },
     width1 = 420 - margin.left - margin.right,
-    height1 = 380 - margin.top - margin.bottom;
+    height1 = 400 - margin.top - margin.bottom;
 
 var svg2 = d3.select("#mybarchart")
     .append("svg")
@@ -185,14 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
             MakeBar(lst)
         })
         attr_name = options[options.selectedIndex].textContent;
-    
+
     })
 })
-
-var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-    width = 440 - margin.left - margin.right,
-    height = 360 - margin.top - margin.bottom;
-
+var margin = { top: 30, right: 30, bottom: 16, left: 60 },
+    width = 520 - margin.left - margin.right,
+    height = 420 - margin.top - margin.bottom;
 
 var svg3 = d3.select("#mybiplot2")
     .append("svg")
@@ -201,17 +199,7 @@ var svg3 = d3.select("#mybiplot2")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
-    
-    svg3.append("text")
-        .text("PC2")
-        .attr("x", 20)
-        .attr("y",50)
-        .style("font-size", 120)
-    svg3.append("text")
-        .text("PC1")
-        .attr("y", 300)
-        .attr("x", 235)
-        .style("font-size", 15)
+
 
 d3.csv("Lab5_pcaplot.csv", function (data) {
 
@@ -221,7 +209,7 @@ d3.csv("Lab5_pcaplot.csv", function (data) {
     svg3.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
-  
+
     var y = d3.scaleLinear()
         .domain([-5, 5])
         .range([height, 0]);
@@ -229,8 +217,6 @@ d3.csv("Lab5_pcaplot.csv", function (data) {
     svg3.append("g")
         .attr("transform", "translate(" + 0 + ", 0)")
         .call(d3.axisLeft(y));
-
-   
 
     scattor = svg3.append('g')
         .selectAll("dot")
@@ -243,15 +229,17 @@ d3.csv("Lab5_pcaplot.csv", function (data) {
 
     scattor.style("fill", "#69b3a2")
 
+    
+
     svg3
-        .call(d3.brush()                    
-            .extent([[0, 0], [width, height]]).on("start brush", updateChart)     
+        .call(d3.brush()
+            .extent([[0, 0], [width, height]]).on("start brush", updateChart)
         )
     function updateChart() {
         extent = d3.event.selection
         scattor.classed("selected", function (d) { return isBrushed(extent, x(d.Principal_Component_1), y(d.Principal_Component_2)) })
         scattor2.classed("selected", function (d) { return isBrushed(extent, x(d.x), y(d.y)) })
-        
+
     }
 
     function isBrushed(brush_coords, cx, cy) {
@@ -259,7 +247,7 @@ d3.csv("Lab5_pcaplot.csv", function (data) {
             x1 = brush_coords[1][0],
             y0 = brush_coords[0][1],
             y1 = brush_coords[1][1];
-        return x0 <= cx && cx <= x1 && y0 <= cy && cy <= y1;    
+        return x0 <= cx && cx <= x1 && y0 <= cy && cy <= y1;
     }
 })
 
@@ -323,7 +311,7 @@ d3.csv("Lab5_MDS.csv", function (data) {
         .attr("class", "y label")
         .attr("text-anchor", "end")
         .attr("y", -30)
-        .attr("x", -130)
+        .attr("x", -160)
         .attr("transform", "rotate(-90)")
         .text("Dimension 2")
         .style("font-size", 12)
@@ -331,8 +319,8 @@ d3.csv("Lab5_MDS.csv", function (data) {
     svg1.append("text")
         .attr("class", "x label")
         .attr("text-anchor", "end")
-        .attr("y", 350)
-        .attr("x", 200)
+        .attr("y", 365)
+        .attr("x", 260)
         .text("Dimension1")
         .style("font-size", 12)
 
@@ -350,7 +338,7 @@ d3.csv("Lab5_MDS.csv", function (data) {
 
 var margin = { top: 30, right: 30, bottom: 10, left: 60 },
     width4 = 300,
-    height4 = 300;
+    height4 = 400;
 
 var svg4 = d3.select("#Parallel_coordinates")
     .append("svg")
@@ -475,52 +463,76 @@ var svg19 = d3.select("#chord")
     .attr("width", 440)
     .attr("height", 440)
     .append("g")
-    .attr("transform", "translate(220,220)")
+    .attr("transform", "translate(220,220)");
 
 d3.csv("Qualityoflife.csv", function (data) {
     var matrix = [];
     for (var j = 1; j < 10; j++) {
-        var lst=[]
+        var lst = [];
         for (var i = 0; i < data.length; i++) {
-            var obj = data[i]
-            lst.push(+obj[Object.keys(obj)[j]])
+            var obj = data[i];
+            lst.push(+obj[Object.keys(obj)[j]]);
         }
-        matrix.push(lst)
+        matrix.push(lst);
     }
-    var colors = [ "#440154ff", "#31668dff", "#37b578ff", "#fde725ff", "red","blue","yellow","black","orange"]
-    var names = ['Housing', 'Cost of Living', 'Commute', 'Business Freedom',
-    'Safety', 'Education', 'Environmental Quality', 'Economy','Taxation']
-    console.log(matrix)
+    var colors = ["#440154ff", "#31668dff", "#37b578ff", "#fde725ff", "red", "blue", "yellow", "black", "orange"];
+    var names = ['Housing', 'Cost of Living', 'Commute', 'Business Freedom', 'Safety', 'Education', 'Environmental Quality', 'Economy', 'Taxation'];
+
     var res = d3.chord()
-    .padAngle(0.05)
-    .sortSubgroups(d3.descending)
-    (matrix)
+        .padAngle(0.05)
+        .sortSubgroups(d3.descending)
+        (matrix);
 
+    // 그룹 아크 생성
+    svg19
+        .datum(res)
+        .append("g")
+        .selectAll(".group")
+        .data(function (d) { return d.groups; })
+        .enter()
+        .append("path")
+        .style("fill", function (d, i) { return colors[i]; })
+        .style("stroke", "black")
+        .attr("d", d3.arc()
+            .innerRadius(200)
+            .outerRadius(210)
+        );
 
-svg19
-  .datum(res)
-  .append("g")
-  .selectAll("g")
-  .data(function(d) { return d.groups; })
-  .enter()
-  .append("g")
-  .append("path")
-    .style("fill", function(d,i){ return colors[i] })
-    .style("stroke", "black")
-    .attr("d", d3.arc()
-      .innerRadius(200)
-      .outerRadius(210)
-    )
-svg19
-  .datum(res)
-  .append("g")
-  .selectAll("path")
-  .data(function(d) { return d; })
-  .enter()
-  .append("path")
-    .attr("d", d3.ribbon()
-      .radius(200)
-    )
-    .style("fill", function(d){ return(colors[d.source.index]) }) 
-    .style("stroke", "black");
-})
+    svg19.selectAll(".group-label")
+        .data(function (d) { return d.groups; })
+        .enter()
+        .append("text")
+        .attr("dy", ".35em")
+        .attr("transform", function (d) {
+            var angle = (d.startAngle + d.endAngle) / 2;
+            var radius = 220;
+            var x = radius * Math.cos(angle);
+            var y = radius * Math.sin(angle);
+
+            // 텍스트가 뒤집히지 않도록 회전 각도를 조절합니다.
+            var rotation = angle * 180 / Math.PI - 90;
+            if (angle > Math.PI) {
+                rotation -= 180;
+            }
+
+            return "translate(" + x + "," + y + ") rotate(" + rotation + ")";
+        })
+        .text(function (d, i) {
+            return names[i];
+        });
+
+    // Chord 연결선 생성
+    svg19
+        .datum(res)
+        .append("g")
+        .selectAll(".chord")
+        .data(function (d) { return d; })
+        .enter()
+        .append("path")
+        .attr("d", d3.ribbon()
+            .radius(200)
+        )
+        .style("fill", function (d) { return colors[d.source.index]; })
+        .style("stroke", "black");
+});
+
