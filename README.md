@@ -4,6 +4,10 @@
 
 This project focuses on analyzing the quality of life in various cities worldwide. The dataset comprises 265 cities and includes 9 attributes: Housing, Cost of Living, Commute, Safety, Business Freedom, Education, Environmental Quality, Economy, and Taxation. The dataset source is [City Quality of Life Dataset](https://www.kaggle.com/datasets/orhankaramancode/city-quality-of-life-dataset) and [Teleport API](https://developers.teleport.org/api/).
 
+## Dashborad
+http://127.0.0.1:5500/City_Qulity_of_Life/Dashboard/lab5.html
+
+
 ## Objectives
 
 The main objectives of this project are:
